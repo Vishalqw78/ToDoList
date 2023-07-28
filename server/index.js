@@ -2,13 +2,23 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const pool = require("./db");
+const pool1 = require('./db');
 
 //middleware
 //PostgreSQL
 
 app.use(cors());
 app.use(express.json());
-
+pool.query(`
+  CREATE TABLE IF NOT EXISTS todo (
+    todo_id SERIAL PRIMARY KEY,
+    description VARCHAR(255)
+  );
+`).then(() => {
+  console.log('Todo table created successfully.');
+}).catch((error) => {
+  console.error('Error creating todo table:', error.message);
+});
 // port 
 var PORT = process.env.PORT || 5000;
 // Routes with their functions
