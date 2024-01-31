@@ -22,5 +22,3 @@ A basic ToDoList application built using the PERN stack.
 - Open the ToDoList app in your browser.
 - Add, edit, and delete tasks as needed.
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
